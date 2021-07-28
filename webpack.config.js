@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   output: {
@@ -10,6 +11,7 @@ module.exports = {
     port: 3010,
     watchContentBase: true,
   },
+  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
@@ -17,6 +19,23 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            plugins: [
+              [
+                "import",
+                {
+                  libraryName: "@react-icons",
+                  camel2DashComponentName: false,
+                  transformToDefaultImport: false,
+                  customName: require("path").resolve(
+                    __dirname,
+                    "./src/react-icons.js"
+                  ),
+                },
+                "@react-icons",
+              ],
+            ],
+          },
         },
       },
       {
@@ -25,5 +44,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin()],
+  optimization: {
+    minimizer: [new CssMinimizerPlugin()],
+  },
 };
