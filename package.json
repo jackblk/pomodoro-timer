@@ -1,5 +1,5 @@
 {
-  "name": "pomodoro-timer",
+  "name": "kitty-timer",
   "version": "1.0.0",
   "description": "Online Pomodoro Timer to learn react",
   "main": "index.js",
@@ -15,9 +15,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jackblk/pomodoro-timer/issues"
+    "url": "https://github.com/jackblk/kitty-timer/issues"
   },
-  "homepage": "https://github.com/jackblk/pomodoro-timer#readme",
+  "homepage": "https://github.com/jackblk/kitty-timer#readme",
   "dependencies": {
     "@moai/core": "^1.2.0",
     "@react-icons/all-files": "^4.1.0",
@@ -38,6 +38,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.1.0",
     "prettier": "^2.3.2",
     "sass": "^1.36.0",
